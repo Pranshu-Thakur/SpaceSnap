@@ -24,4 +24,6 @@ print('res6' ,res6)
 
 #There are and not or which are self explanatory.
 # and there is == , < , > , !=
+#if i make changes in here will i be able to make changes in the orignal code ? 
+
 
