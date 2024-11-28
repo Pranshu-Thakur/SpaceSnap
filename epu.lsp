@@ -96,23 +96,23 @@
         
         (if (equal a2-cell "pallet" )
           (progn
-            ;(cond
-              ;((equal f2-cell "filled") (setvar 'clayer "filled"))
-              ;((equal f2-cell "almost filled") (setvar 'clayer "almost filled"))
-              ;((equal f2-cell "partial") (setvar 'clayer "partial"))
-              ;((equal f2-cell "empty") (setvar 'clayer "empty"))
-              ;(t
-              ;  (princ "\nF2 does not contain a valid status")
-             ; )
-            ;)
+            (cond
+              ((equal f2-cell "filled") (setvar 'clayer "filled"))
+              ((equal f2-cell "almost filled") (setvar 'clayer "almost filled"))
+              ((equal f2-cell "partial") (setvar 'clayer "partial"))
+              ((equal f2-cell "empty") (setvar 'clayer "empty"))
+              (t
+                (princ "\nF2 does not contain a valid status")
+              )
+            )
             
             (command "_.-insert" "huha" (strcat (rtos x-coord 2 0) "," (rtos y-coord 2 0))"1" "1" "0")
             
             
             (command "_.-text" (list (+ x-coord 94)  (+ y-coord 815)) 80 0 b2-cell) ;;Enter Pallet number
-            ;(command "_.-text" (list (+ x-coord 94)  (+ y-coord 546)) 80 0 c2-cell) ;; Enter Brand Name
-            ;(command "_.-text" (list (+ x-coord 94)  (+ y-coord 420)) 80 0 d2-cell) ;; Product Name 
-            ;(command "_.-text" (list (+ x-coord 630)  (+ y-coord 44)) 80 0 (strcat e2-cell "%")) ;; Percentage
+            (command "_.-text" (list (+ x-coord 94)  (+ y-coord 546)) 80 0 c2-cell) ;; Enter Brand Name
+            (command "_.-text" (list (+ x-coord 94)  (+ y-coord 420)) 80 0 d2-cell) ;; Product Name 
+            (command "_.-text" (list (+ x-coord 630)  (+ y-coord 44)) 80 0 (strcat e2-cell "%")) ;; Percentage
             (setq pallet-count (1+ pallet-count))
             (setq pallet-count2 (1+ pallet-count2))
             (setq pallet-count3 (1+ pallet-count3))
